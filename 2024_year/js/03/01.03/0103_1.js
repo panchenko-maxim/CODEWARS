@@ -13,17 +13,12 @@ Examples:
 
 
 function solution(str){
-   if (str.length % 2 != 0) str += '_'
-   let lst = []
-   for (let i = 0; i < str.length; i++){
-    if (i != 0 && i % 2 == 0){
-        lst.push(str[i-1,i])
-    }
-    
-   }
-   return lst
+   if (str.length % 2 != 0) str += '_';
+   if (str.length == 0) return [];
+   return str.match(/.{1,2}/g);
 }
 
 
-console.log(solution('abc'))
-console.log(solution('abcdef'))
+// console.log(solution('abc'))
+// console.log(solution('abcdef'))
+// console.log(solution(''))
