@@ -16,7 +16,7 @@ Examples
 function digitalRoot(n) {
     let num = n;
     let flag = false
-    while(num > 10){
+    while(num >= 10){
         num = String(num).split('').map(Number).reduce((acc, val)=>{return acc + val}, 0);
         
     }
