@@ -29,11 +29,25 @@ A size 5 diamond:
 
 function diamond(n){
     if (n % 2 == 0 || n <= 0) return null;
-    for (let i=0;i!=n;i++){
-        console.log(i)
+    let lst_picture = []
 
+    function picture(n, stars){
+      let space = " ".repeat(Number((n - stars) / 2))
+      return `${space}${"*".repeat(stars)}${space}`
     }
+
+    for (let i=1;i<=n + 1;){
+        lst_picture.push(picture(n, i))
+        i += 2
+    }
+    for (let i=n-2; i >= 1;) {
+        lst_picture.push(picture(n, i))
+        i -=2
+    }
+    return lst_picture
+
 }
 
 
-diamond(5)
+
+console.log(diamond(5))
